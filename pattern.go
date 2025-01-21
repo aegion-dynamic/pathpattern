@@ -9,7 +9,7 @@ import (
 type Pattern struct {
 	Original  string   // the original pattern string
 	Prefix    string   // pattern with wildcard removed (if any)
-	IsWildard bool     // whether this pattern ends with "*"
+	IsWildCard bool     // whether this pattern ends with "*"
 }
 
 type PathMatcher struct {
@@ -38,7 +38,7 @@ func createPattern(p string) Pattern {
 	return Pattern{
 		Original:  cleanPath,
 		Prefix:    prefix,
-		IsWildard: isWildcard,
+		IsWildCard: isWildcard,
 	}
 }
 
@@ -46,7 +46,7 @@ func (pm *PathMatcher) Matches(requestPath string) bool {
 	cleanPath := path.Clean(requestPath)
 	
 	for _, pattern := range pm.patterns {
-		if pattern.IsWildard {
+		if pattern.IsWildCard {
 			if strings.HasPrefix(cleanPath, pattern.Prefix) {
 				return true
 			}
