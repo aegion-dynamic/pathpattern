@@ -9,12 +9,12 @@ Patterns are preprocessed during initialization for better performance.
 
 Basic usage:
 ```sh
-go get github.com/aquaticcalf/pathpattern
+go get github.com/aegion-dynamic/pathpattern
 ```
 ```go
 import (
     ...
-    "github.com/aquaticcalf/pathpattern",
+    "github.com/aegion-dynamic/pathpattern",
     ...
 )
 ```
